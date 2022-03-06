@@ -1,0 +1,31 @@
+digraph L{
+    node[shape=plain fontname="Arial"]
+    
+    subgraph cluster1{
+        label = "codigo"
+        fontname="Arial"
+        bgcolor = lightseagreen
+        
+        
+        a0 [label=<
+        <TABLE border="4" cellspacing="10" cellpadding="10" style="rounded" bgcolor="lightblue">
+        <TR>
+        <TD border="3"  bgcolor="black"></TD>
+        <TD border="3"  bgcolor="white"></TD>
+        <TD border="3"  bgcolor="white"></TD>
+        <TD border="3"  bgcolor="black"></TD>
+        <TD border="3"  bgcolor="white"></TD>
+        <TD border="3"  bgcolor="black"></TD>
+        </TR>
+  
+        <TR>
+        <TD border="3"  bgcolor="white"></TD>
+        <TD border="3"  bgcolor="black"></TD>
+        <TD border="3"  bgcolor="white"></TD>
+        <TD border="3"  bgcolor="black"></TD>
+        <TD border="3"  bgcolor="white"></TD>
+        <TD border="3"  bgcolor="black"></TD>
+        </TR>
+        </TABLE>>];
+    }
+}

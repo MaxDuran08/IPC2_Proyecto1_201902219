@@ -1,0 +1,46 @@
+[INSTRUCCIONES]
+[VOLTEO-PASO #1]:
+En la posicion [0][0] se volteara el azulejo "B", 
+quedando: "W"
+[VOLTEO-PASO #2]:
+En la posicion [0][3] se volteara el azulejo "W", 
+quedando: "B"
+[VOLTEO-PASO #3]:
+En la posicion [0][4] se volteara el azulejo "W", 
+quedando: "B"
+[VOLTEO-PASO #4]:
+En la posicion [1][0] se volteara el azulejo "B", 
+quedando: "W"
+[VOLTEO-PASO #5]:
+En la posicion [1][3] se volteara el azulejo "W", 
+quedando: "B"
+[VOLTEO-PASO #6]:
+En la posicion [1][4] se volteara el azulejo "W", 
+quedando: "B"
+[VOLTEO-PASO #7]:
+En la posicion [2][0] se volteara el azulejo "B", 
+quedando: "W"
+[VOLTEO-PASO #8]:
+En la posicion [2][3] se volteara el azulejo "W", 
+quedando: "B"
+[VOLTEO-PASO #9]:
+En la posicion [2][4] se volteara el azulejo "W", 
+quedando: "B"
+[VOLTEO-PASO #10]:
+En la posicion [3][0] se volteara el azulejo "B", 
+quedando: "W"
+[VOLTEO-PASO #11]:
+En la posicion [3][3] se volteara el azulejo "W", 
+quedando: "B"
+[VOLTEO-PASO #12]:
+En la posicion [3][4] se volteara el azulejo "W", 
+quedando: "B"
+[VOLTEO-PASO #13]:
+En la posicion [4][0] se volteara el azulejo "B", 
+quedando: "W"
+[VOLTEO-PASO #14]:
+En la posicion [4][3] se volteara el azulejo "W", 
+quedando: "B"
+[VOLTEO-PASO #15]:
+En la posicion [4][4] se volteara el azulejo "W", 
+quedando: "B"
