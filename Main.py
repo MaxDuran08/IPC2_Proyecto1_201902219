@@ -237,7 +237,7 @@ while Menu:
                                             MPatrones=False
                                         elif Opcion==1:
                                             print("Graficando el patron actual...")
-                                            G(PatronSeleccionado[2],PatronSeleccionado[0])
+                                            G(PatronSeleccionado[2],PatronSeleccionado[0],PatronSeleccionado[1])
                                         elif Opcion==2:
                                             print("[SELECCION]: Selecciono transformar el patron actual")
                                             try:
@@ -282,6 +282,7 @@ while Menu:
 
                                                                 elif Opcion==3:
                                                                     print("Graficar nuevo patron")
+                                                                    G(transformacion.matriz1,PatronSeleccionado[0],NuevoPatronSeleccionado[1])
                                                                 else:
                                                                     print("[ERROR]: Debe de ingresar un valor numerico aceptable") 
                                                         except:

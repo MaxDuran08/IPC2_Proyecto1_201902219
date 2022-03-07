@@ -1,15 +1,17 @@
 import os
 from os import system,startfile
+import pathlib
+import graphviz
 class Graficar:
-    def __init__(self,matriz,codigo):
+    def __init__(self,matriz,codigo,patron):
         self.matriz=matriz
-        self.codigo=codigo
+        self.codigo=str(codigo)+" => "+str(patron)
         self.n=""
         self.Crear()
     
     def Crear(self):
         Ruta=self.Calcular()
-        RutaPng="Grafica"+str(self.n)+".png"
+        RutaPng="Grafica"+str(self.n)
 
         text="""digraph L{
     node[shape=plain fontname=\"Arial\"]
@@ -45,11 +47,12 @@ class Graficar:
             Reporte.close
             print("[GRAFICAR]: Se guardo el archivo con el nombre: "+str(Ruta))
             try:
-                print(Ruta)
-                print(RutaPng)
-                system('dot -Tpng '+str(Ruta)+' -o '+str(RutaPng))
-                #system('cd .\\'+str(RutaPng))
-                #startfile(str(RutaPng))
+                src = graphviz.Source(text,format="png")
+                src.render(RutaPng)
+                if os.path.exists(RutaPng):
+                    os.remove(RutaPng)
+                startfile(str(RutaPng)+".png")
+                print("[GRAFICAR]: Se guardo el archivo con el nombre: "+str(RutaPng)+".png")
             except:
                 print("[ERROR-GRAFICA]: Problema al abrir el archivo")
         except:

@@ -112,42 +112,42 @@ class Transformacion:
                     cWnecesito+=1
             self.matriz1=self.PrimerPatron[2]
             self.matriz2=self.SegundoPatron[2]
-            print("=>")
+            """print("=>")
             print(self.matriz1)
             print("Primer patron => B:"+str(cBtengo)+", W:"+str(cWtengo))
             print("=>")
             print(self.matriz2)
-            print("Segundo patron => B:"+str(cBnecesito)+", W:"+str(cWnecesito))
+            print("Segundo patron => B:"+str(cBnecesito)+", W:"+str(cWnecesito))"""
             self.filas=int(self.Piso[1])
             self.columnas=int(self.Piso[2])
-            print("Filas: "+str(self.filas))
-            print("Columnas: "+str(self.columnas))
+            """print("Filas: "+str(self.filas))
+            print("Columnas: "+str(self.columnas))"""
             
             print("No coincide en \""+str(self.AzulejosDesiguales())+"\" azulejos")
             if self.filas==1 and self.columnas>1:
-                print("matriz de 1*m")
+                #print("matriz de 1*m")
                 #Cambio lateral
                 self.IntercambioLateralCoincidencia()
                 self.VolteoCoincidencia()
-                print(self.matriz1)
+                """print(self.matriz1)
                 print(self.matriz2)
                 print(str(self.Instrucciones))
-                print("Costo: "+str(self.CostoMinimo))
+                print("Costo: "+str(self.CostoMinimo))"""
             elif self.columnas==1 and self.filas>1:
-                print("matriz de n*1")
+                #print("matriz de n*1")
                 #cambio vertical
                 self.IntercambioVerticalCoincidencia()
                 self.VolteoCoincidencia()
-                print(self.matriz1)
+                """print(self.matriz1)
                 print(self.matriz2)
                 print(str(self.Instrucciones))
-                print("Costo: "+str(self.CostoMinimo))
+                print("Costo: "+str(self.CostoMinimo))"""
             else:
-                print("matriz de n*m")
+                #print("matriz de n*m")
                 self.IntercambioLateralCoincidencia
                 self.IntercambioVerticalCoincidencia()
                 self.VolteoCoincidencia()
-                print(self.matriz1)
+                """print(self.matriz1)
                 print(self.matriz2)
                 print(str(self.Instrucciones))
-                print("Costo: "+str(self.CostoMinimo))
+                print("Costo: "+str(self.CostoMinimo))"""
