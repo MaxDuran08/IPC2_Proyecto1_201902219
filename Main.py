@@ -53,39 +53,39 @@ def Ordenamiento(Lista):
         for j in range(0, len(Lista)-i-1):
             primero=str(Lista[j][0])
             segundo=str(Lista[j+1][0])
-            #print(str(Lista))
-            #print("Probando con => ["+primero+"], ["+segundo+"]")
             if esMayor(primero,segundo):
                 temp = Lista[j]
                 Lista[j] = Lista[j+1]
                 Lista[j+1] = temp
-                #print("Se realizo un cambio, queda: ["+segundo+"], ["+primero+"]")
-            #else:
-                #print("No se hace cambio, queda: ["+primero+"], ["+segundo+"]")
+               
 def CargarDatos():
-    #tree = ET.parse(easygui.fileopenbox(title="Abre el archivo .XML"))
-    #tree = ET.parse("C:\\Users\\Usuario\\Documents\\USAC\\Class\\IPC 2\\Lab\\pruebas\\prueba.xml")
-    tree = ET.parse("prueba.xml")
-    root = tree.getroot()
-    for i in range(len(root)):
-        CurrentLista1=MiLista()
-        CurrentLista1.Append(root[i].attrib["nombre"])
-        CurrentLista1.Append(root[i][0].text.replace(" ","").replace("\n",""))
-        CurrentLista1.Append(root[i][1].text.replace(" ","").replace("\n",""))
-        CurrentLista1.Append(root[i][2].text.replace(" ","").replace("\n",""))
-        CurrentLista1.Append(root[i][3].text.replace(" ","").replace("\n",""))
-        CurrentLista2=MiLista()
-        for j in range(len(root[i][4])):
-            if len(root[i][4][j].text.replace(" ","").replace("\n",""))==(int(root[i][0].text.replace(" ","").replace("\n",""))*int(root[i][1].text.replace(" ","").replace("\n",""))):
-                #print("aceptable")
-                CurrentLista3=MiLista()
-                CurrentLista3.Append(root[i][4][j].attrib["codigo"])
-                CurrentLista3.Append(root[i][4][j].text.replace(" ","").replace("\n",""))
-                CurrentLista3.Append(CrearMatrices(int(root[i][0].text.replace(" ","").replace("\n","")),int(root[i][1].text.replace(" ","").replace("\n","")),root[i][4][j].text.replace(" ","").replace("\n","")))
-                CurrentLista2.Append(CurrentLista3)
-        Ordenamiento(CurrentLista2)
-        CurrentLista1.Append(CurrentLista2)
-        Data.Append(CurrentLista1)
+    key=True
+    while key:
+        try:
+            tree = ET.parse(easygui.fileopenbox(title="Abre el archivo .XML"))
+            root = tree.getroot()
+            for i in range(len(root)):
+                CurrentLista1=MiLista()
+                CurrentLista1.Append(root[i].attrib["nombre"])
+                CurrentLista1.Append(root[i][0].text.replace(" ","").replace("\n",""))
+                CurrentLista1.Append(root[i][1].text.replace(" ","").replace("\n",""))
+                CurrentLista1.Append(root[i][2].text.replace(" ","").replace("\n",""))
+                CurrentLista1.Append(root[i][3].text.replace(" ","").replace("\n",""))
+                CurrentLista2=MiLista()
+                for j in range(len(root[i][4])):
+                    if len(root[i][4][j].text.replace(" ","").replace("\n",""))==(int(root[i][0].text.replace(" ","").replace("\n",""))*int(root[i][1].text.replace(" ","").replace("\n",""))):
+                        #print("aceptable")
+                        CurrentLista3=MiLista()
+                        CurrentLista3.Append(root[i][4][j].attrib["codigo"])
+                        CurrentLista3.Append(root[i][4][j].text.replace(" ","").replace("\n",""))
+                        CurrentLista3.Append(CrearMatrices(int(root[i][0].text.replace(" ","").replace("\n","")),int(root[i][1].text.replace(" ","").replace("\n","")),root[i][4][j].text.replace(" ","").replace("\n","")))
+                        CurrentLista2.Append(CurrentLista3)
+                Ordenamiento(CurrentLista2)
+                CurrentLista1.Append(CurrentLista2)
+                Data.Append(CurrentLista1)
+            key=False
+        except:
+            print("[ERROR]: Escoja un archivo valido")
     
 def CrearMatrices(filas,columnas,patron):
     #print("Filas: "+str(filas)+", Columnass: "+str(columnas)+" ,Patron: "+str(patron))
@@ -106,6 +106,7 @@ def MenuOpcion():
     print("<*>===================================<*>")
     print(" | 1. CARGAR DATOS                     |")
     print(" | 2. PISOS                            |")
+    print(" | 3. DATOS EN FORMA ALFABETICA        |")
     print(" | 0. SALIR                            |")
     print("<*>===================================<*>")
 
@@ -195,10 +196,7 @@ while Menu:
         Data=MiLista()
         CargarDatos()
         Ordenamiento(Data)
-        #for x in range(len(Data)):
-        #    print(Data[x])
         print("[CARGAR DATOS]: CARGA SATISFACTORIA")
-        #transformacion=TF(Data[0],Data[0][5][0],Data[0][5][1])
     elif Opcion==2:
         if len(Data)>0:
             print("[OPCION-PISOS]: Entrando a nuevo menu")
@@ -261,7 +259,7 @@ while Menu:
                                                                 if Opcion==0:
                                                                     mFinal=False
                                                                 elif Opcion==1:
-                                                                    print("El costo es de: "+str(transformacion.CostoMinimo))
+                                                                    print("El costo es de: "+str(transformacion.CostoMinimo)+" Q")
                                                                 elif Opcion==2:
                                                                     try:
                                                                         mInstrucciones=True
@@ -296,6 +294,18 @@ while Menu:
                                     print("[ERROR]: El patron seleccionado no existe")
                     except:
                         print("[ERROR]: El piso seleccionado no existe")
+        else:
+            print("[ERROR-MENU]: Debe de cargar informacion primero")
+    elif Opcion==3:
+        if len(Data)>0:
+            print("[OPCION-DATOS EN FORMA ALFABETICA]: Mostrando datos")
+            print("<*>===================================<*>")
+            for i in range(len(Data)):
+                print(" | => Codigo de piso: "+str(Data[i][0]))
+                for j in range(len(Data[i][5])):
+                    print(" | \tII=> Codigo de patron: "+str(Data[i][5][j][0]))
+            print("<*>===================================<*>")
+            print("[MENU]: Regresandoa menu principal")
         else:
             print("[ERROR-MENU]: Debe de cargar informacion primero")
     elif Opcion==0:

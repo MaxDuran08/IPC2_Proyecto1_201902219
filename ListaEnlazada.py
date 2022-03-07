@@ -50,11 +50,6 @@ class ListaEnlazada:
                 else:#De lo contrario hacemos la union con el nodo que le sigue al nodo borrado
                     Current.SiguienteValor=NodoBorrado.SiguienteValor
                 self.Tamaño-=1
-    
-    def Insert(self,Valor):
-        NuevoNodo=Nodo(Valor)
-
-        return True
         
     def __setitem__(self,indice,NuevoValor):
         if indice>=0 and indice < self.Tamaño:

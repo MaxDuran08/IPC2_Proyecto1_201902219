@@ -123,7 +123,7 @@ class Transformacion:
             """print("Filas: "+str(self.filas))
             print("Columnas: "+str(self.columnas))"""
             
-            print("No coincide en \""+str(self.AzulejosDesiguales())+"\" azulejos")
+            #print("No coincide en \""+str(self.AzulejosDesiguales())+"\" azulejos")
             if self.filas==1 and self.columnas>1:
                 #print("matriz de 1*m")
                 #Cambio lateral
